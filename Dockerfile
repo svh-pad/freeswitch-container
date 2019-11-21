@@ -37,6 +37,8 @@ WORKDIR /usr/src
 ENV GIT_SSL_NO_VERIFY=1
 RUN git clone https://freeswitch.org/stash/scm/fs/freeswitch.git -b v1.6.16
 
+RUN apt-get update && apt-get install -y flite
+
 # Bootstrap the build.
 WORKDIR freeswitch
 RUN ./bootstrap.sh
